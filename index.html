@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Rain</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+        <div class="stat"><span>Level</span><strong id="level">1</strong></div>
+        <div class="stat"><span>Lives</span><strong id="lives">5</strong></div>
+      </header>
+
+      <section class="playfield-wrap">
+        <div id="playfield" class="playfield" aria-live="polite"></div>
+        <div id="overlay" class="overlay">
+          <h1>Typing Rain</h1>
+          <p>Type the falling English words and phrases, then press Enter.</p>
+          <button id="startBtn" type="button">Start Game</button>
+        </div>
+      </section>
+
+      <form id="typeForm" class="type-panel" autocomplete="off">
+        <input
+          id="typeInput"
+          type="text"
+          placeholder="Type a word or phrase and press Enter"
+          aria-label="Type to remove words"
+          disabled
+        />
+      </form>
+      <p id="message" class="message"></p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
