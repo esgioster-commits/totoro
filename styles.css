@@ -1,0 +1,132 @@
+:root {
+  color-scheme: dark;
+  --bg: #060f20;
+  --panel: #101b32;
+  --accent: #37d4ff;
+  --text: #e8f3ff;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #112349 10%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.game-shell {
+  width: min(950px, 95vw);
+}
+
+.hud {
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid #243255;
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  min-width: 110px;
+}
+
+.stat span {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+.stat strong {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.playfield-wrap {
+  position: relative;
+  border: 2px solid #2b3b62;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.playfield {
+  position: relative;
+  height: 560px;
+  background: linear-gradient(180deg, #0e1a35 0%, #0a1328 100%);
+}
+
+.drop {
+  position: absolute;
+  top: -2rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #314877;
+  background: rgb(8 22 50 / 88%);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-shadow: 0 0 8px rgb(55 212 255 / 40%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(4 8 20 / 80%);
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay button {
+  justify-self: center;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  background: var(--accent);
+  color: #001526;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.type-panel {
+  margin-top: 0.9rem;
+}
+
+#typeInput {
+  width: 100%;
+  border: 1px solid #2f4472;
+  border-radius: 10px;
+  background: #0e1a33;
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  font-size: 1.02rem;
+}
+
+#typeInput:focus {
+  outline: 2px solid rgb(55 212 255 / 45%);
+}
+
+.message {
+  margin-top: 0.7rem;
+  min-height: 1.4rem;
+  color: #a9c6ff;
+}
+
+.message.error {
+  color: var(--danger);
+}
